@@ -1,17 +1,8 @@
 from flask import Flask
-from app.routes.api import api  # Import the blueprint from the correct path
+from app.routes.upload_routes import upload_blueprint
 
-# Initialize the Flask app
 app = Flask(__name__)
+app.register_blueprint(upload_blueprint, url_prefix='/api')
 
-# Register the blueprint
-app.register_blueprint(api, url_prefix='/api')
-
-# Define a test route (optional)
-@app.route('/')
-def home():
-    return "Welcome to the Analytics Backend!"
-
-# Run the app
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
