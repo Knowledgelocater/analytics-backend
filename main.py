@@ -10,4 +10,6 @@ def home():
     return render_template('upload_form.html')  # You need to create this 'home.html' file
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) # Flask server starts
+
+    
